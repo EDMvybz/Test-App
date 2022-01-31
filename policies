@@ -1,0 +1,62 @@
+# date of establiment of program- 2021/12/21
+# Author
+# Ewart Mc Rae
+
+# Selective Objective: Create a  A programming data-driven solution for an identified problem
+# that can benefit from programming soultion. Data-drven means the program will process a real 
+# dataset on some national or international issue.
+import random
+import datetime
+T = datetime.datetime.now()
+from tkinter import *
+print('\n##############################################')
+print("*** Current Date & Time:- ",T)
+name = input("Enter your name:  ")
+print("1. Staff name:  \n "+ name + " access this system @:", T)
+
+print('\n*********************************************')
+print("2. From the list below " +name+ ", please type your Department name, verbatimly as seen below:")
+department = [" Personnel","Registry","Misu","Accounts"]
+print(department)
+print('\n*********************************************')
+x = input("Enter Department name:")
+print(name," attached to the "+ x +" department, you are attempting to entering into the legal system's \n database, see below instructions ")
+print('\n*********************************************')
+crime = ["Rape","Domestic Abuse","Child Abuse","Arson","Theft","Murder"]
+print(crime)
+A = input("Enter the accused crime from the Above crime list:\n")
+if A == "Rape":
+    print("Rape:\n"+ name +" attached to " + x + "\n This crime can be defined as:\n (A) Any indecent assault, or any assault with intent to commit a rape, or any \n attempt  or any attempt or endeavour to commit a rape; or")
+    print("\n (B) Carnally knowing or attempting to know any girl so as to be punishable under \n this Act; or ")
+    print("\n (C) Any infamous offence, that is to say, buggery, any attempt or assault \n with intentto commit buggery, or any unnatural practice; or ")
+    print("\n (D) Conselling or procuring any person to commit any infamous offence aforesaid ")            
+elif A == "Domestic Abuse":
+    print(" Domestic Abuse: "+ name +" attached to " + x + " \n This crime can be defined as:\n  is violence or other abuse that occurs in a domestic setting, such as in a marriage or \n cohabitation. Domestic violence is often used as a synonym for intimate \n partner violence, which is committed by one of the people in an \n intimate relationship against the other person, and can take place in either heterosexual or \n same-sex relationships or between former spouses or partners. In its broadest sense,\n domestic violence also involves violence against children, parents,\n or the elderly. It can assume multiple forms, including physical,\n verbal, emotional, economic, religious, reproductive, or sexual abuse,\n which can range from subtle, coercive forms to marital rape and \n other violent physical abuse, such as choking, beating, female genital mutilation,\n and acid throwing that may result in disfigurement or death. Domestic murder includes stoning, bride burning, honor killing, \n and dowry death, which sometimes involves non-cohabitating family members.")
+elif A == "Child Abuse":
+    print("Child Abuse:\n "+ name +" attached to " + x + " \n This crime can be defined as:\n Child abuse or child maltreatment is physical, sexual \n and/or psychological maltreatment or neglect of a child or children, \n especially by a parent or a caregiver that results in actual or potential \n harm to a child and can occur in a child's home, or in the organizations, \n schools, or communities the child interacts with.")
+elif A == "Arson":
+    print(" Arson:\n "+ name +" attached to " + x + "  \n This crime can be defined as:\n A crime of willfully and maliciously setting fire \n to a charring property. Thought the act typically involves buildings, \n the term arson can also refer to the intentional burning \n of otherthings, such as motor vehicles, watercraft or forests. ")
+elif A == "Theft":
+    print(" Theft\n "+ name +" attached to " + x + "  \n This crime can be defined as:\n The physical removal of an object \n that is capable of being stolen without the consent of the owner\n and with the intention to depriving the owner snd with the \n intention of deprving the owner of it permanently. ")
+elif A == "Murder":
+    print("Murder:\n "+ name +" attached to " + x + "\n This crime can be defined as:\n A captial offence in Guyana \n which occurs when one human being unlawfully kills another human being. \n ")
+else: 
+    A == input("What is Crime committed by the offender?:\n")
+
+root = Tk()
+popup = Menu(root, tearoff=0)
+popup.add_command(label="Main Product")
+popup.add_command(label="Side Product")
+def popupm(bt):
+     try:         
+        x = bt.winfo_rootx()
+        y = bt.winfo_rooty()
+        popup.tk_popup(x, y, 0)
+     finally:
+           popup.grab_release()
+
+bt = Button(root,text= A)
+bt.configure(command = lambda: popupm(bt))
+bt.place(x = 10, y = 15)
+root.mainloop()
+
